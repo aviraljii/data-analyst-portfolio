@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const projects = [
   {
-    title: 'Customer Shopping Behavior Analysis',
+    title: 'Customer Shopping Behaviour Analysis',
     description:
       'Comprehensive analysis of customer shopping patterns and preferences using SQL and Python. Generated actionable insights for marketing optimization.',
     technologies: ['SQL', 'Python', 'Pandas', 'Power BI'],
@@ -16,12 +17,12 @@ const projects = [
       'Behavioral metrics dashboard',
       'Predictive insights',
     ],
-    imageUrl: '/placeholder.svg?height=300&width=500',
+    imageUrl: '/project1.png',
     demoUrl: '#',
     githubUrl: '#',
   },
   {
-    title: 'Blinkit Real-Time Sales Dashboard',
+    title: 'Blinkit Data Analysis Dashboard',
     description:
       'Real-time sales monitoring dashboard for Blinkit logistics. Provides instant visibility into delivery metrics, order status, and performance KPIs.',
     technologies: ['Power BI', 'SQL', 'DAX', 'MySQL'],
@@ -31,7 +32,7 @@ const projects = [
       'Regional performance analysis',
       'Executive summary view',
     ],
-    imageUrl: '/placeholder.svg?height=300&width=500',
+    imageUrl: '/project2.png',
     demoUrl: '#',
     githubUrl: '#',
   },
@@ -91,10 +92,12 @@ export function Projects() {
             >
               {/* Project image */}
               <div className="relative h-48 bg-secondary overflow-hidden">
-                <img
+                <Image
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>

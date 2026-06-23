@@ -6,6 +6,20 @@ import { Download, Mail, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export function Hero() {
+  const handleResumeDownload = async () => {
+    const response = await fetch('/NANSHI_SHARMA_CV.pdf')
+    const blob = await response.blob()
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+
+    link.href = url
+    link.download = 'Nanshi_Sharma_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+    window.URL.revokeObjectURL(url)
+  }
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,12 +97,18 @@ export function Hero() {
               View Projects <ArrowRight size={18} />
             </button>
           </Link>
+
           <Link href="#contact">
             <button className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300">
               Get In Touch <Mail size={18} />
             </button>
           </Link>
-          <button className="px-8 py-3 bg-accent/10 text-foreground rounded-lg font-semibold flex items-center gap-2 hover:bg-accent/20 transition-all duration-300">
+
+          <button
+            type="button"
+            onClick={handleResumeDownload}
+            className="px-8 py-3 bg-accent/10 text-foreground rounded-lg font-semibold flex items-center gap-2 hover:bg-accent/20 transition-all duration-300 hover:scale-105"
+          >
             Download Resume <Download size={18} />
           </button>
         </motion.div>
