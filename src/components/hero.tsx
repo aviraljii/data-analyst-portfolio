@@ -3,21 +3,18 @@
 import { motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import { Download, Mail, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function Hero() {
-  const handleResumeDownload = async () => {
-    const response = await fetch('/NANSHI_SHARMA_CV.pdf')
-    const blob = await response.blob()
-    const url = window.URL.createObjectURL(blob)
+  const handleResumeDownload = () => {
     const link = document.createElement('a')
 
-    link.href = url
-    link.download = 'Nanshi_Sharma_Resume.pdf'
+    link.href = '/Nanshi%20Sharma%20cv.pdf'
+    link.download = 'Nanshi Sharma cv.pdf'
     document.body.appendChild(link)
     link.click()
     link.remove()
-    window.URL.revokeObjectURL(url)
   }
 
   const containerVariants: Variants = {
@@ -55,9 +52,11 @@ export function Hero() {
         {/* Profile image placeholder */}
         <motion.div variants={itemVariants} className="mb-8">
           <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent to-accent/50 flex items-center justify-center border-2 border-accent/30 shadow-lg">
-            <img
+            <Image
               src="/placeholder.svg?height=128&width=128"
               alt="Nanshi Sharma"
+              width={128}
+              height={128}
               className="w-full h-full rounded-full object-cover"
             />
           </div>

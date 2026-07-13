@@ -7,34 +7,34 @@ import Link from 'next/link'
 
 const projects = [
   {
-    title: 'Customer Shopping Behaviour Analysis',
+    title: 'HR Attrition Analysis',
     description:
-      'Comprehensive analysis of customer shopping patterns and preferences using SQL and Python. Generated actionable insights for marketing optimization.',
+      'Interactive HR analytics dashboard analyzing attrition trends, workforce demographics, salary distribution, department performance, job satisfaction, education, age groups, and employee performance metrics.',
+    technologies: ['Power BI', 'SQL', 'Excel', 'Data Analysis', 'Dashboard Design'],
+    features: [
+      'Attrition rate KPI tracking',
+      'Department and salary analysis',
+      'Job satisfaction insights',
+      'Workforce demographic trends',
+    ],
+    imageUrl: '/projects/hr-attrition-analysis.png',
+    demoUrl: '#',
+    githubUrl: 'https://github.com/Nancysharma-09/HR-Attrition-Analysis',
+  },
+  {
+    title: 'Customer Shopping Analysis',
+    description:
+      'Analyzed customer shopping behavior, segmentation, sales trends, and purchasing patterns to uncover actionable insights for marketing strategy and revenue optimization.',
     technologies: ['SQL', 'Python', 'Pandas', 'Power BI'],
     features: [
       'Customer segmentation analysis',
-      'Purchase pattern identification',
-      'Behavioral metrics dashboard',
-      'Predictive insights',
+      'Purchase trend identification',
+      'Sales performance dashboard',
+      'Revenue growth insights',
     ],
-    imageUrl: '/project1.png',
+    imageUrl: '/projects/customer-shopping-analysis.png',
     demoUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'Blinkit Data Analysis Dashboard',
-    description:
-      'Real-time sales monitoring dashboard for Blinkit logistics. Provides instant visibility into delivery metrics, order status, and performance KPIs.',
-    technologies: ['Power BI', 'SQL', 'DAX', 'MySQL'],
-    features: [
-      'Real-time sales tracking',
-      'Delivery performance metrics',
-      'Regional performance analysis',
-      'Executive summary view',
-    ],
-    imageUrl: '/project2.png',
-    demoUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/Nancysharma-09/Customer-shopping-Analysis',
   },
 ]
 
@@ -88,7 +88,7 @@ export function Projects() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-accent hover:shadow-xl transition-all duration-300"
+              className="group h-full bg-card border border-border rounded-2xl overflow-hidden hover:border-accent hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               {/* Project image */}
               <div className="relative h-48 bg-secondary overflow-hidden">
@@ -103,7 +103,7 @@ export function Projects() {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
+              <div className="p-6 space-y-4 flex flex-1 flex-col">
                 <h3 className="text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h3>
@@ -123,7 +123,7 @@ export function Projects() {
                 </div>
 
                 {/* Features */}
-                <div className="space-y-2 pt-2">
+                <div className="space-y-2 pt-2 flex-1">
                   {project.features.map((feature, idx) => (
                     <p
                       key={idx}
@@ -142,7 +142,12 @@ export function Projects() {
                       Live Demo <ExternalLink size={16} />
                     </button>
                   </Link>
-                  <Link href={project.githubUrl} className="flex-1">
+                  <Link
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
                     <button className="w-full py-2 border border-foreground/20 text-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-secondary transition-all duration-300">
                       GitHub 
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
