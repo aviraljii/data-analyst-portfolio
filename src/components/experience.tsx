@@ -5,16 +5,14 @@ import { CheckCircle } from 'lucide-react'
 
 const experiences = [
   {
-    company: 'DQOT Solutions Pvt. Ltd.',
+    company: 'AppVibe',
     role: 'Associate Data Analyst',
-    period: 'Jan 2026 – Present',
+    period: 'January 2026 – July 2026',
     responsibilities: [
-      'Analyze large datasets to identify trends and patterns affecting business performance',
-      'Develop and maintain interactive Power BI dashboards for executive reporting',
-      'Create SQL queries and stored procedures for data extraction and transformation',
-      'Collaborate with stakeholders to define KPIs and metrics for business monitoring',
-      'Perform exploratory data analysis to support business decision-making',
-      'Optimize database queries for improved performance and efficiency',
+      'Worked on data analysis and reporting using Power BI, Tableau, Python, and SQL.',
+      'Developed interactive dashboards and reports.',
+      'Performed data cleaning, transformation, and visualization.',
+      'Collaborated with cross-functional teams to support data-driven decision-making.',
     ],
   },
 ]
